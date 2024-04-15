@@ -1,26 +1,39 @@
 /* Import the font */
 @font-face {
-  font-family: 'EVA-Matisse_Standard';
-  src: url('/EVA-Matisse_Standard.ttf') format('truetype');
+ font-family: 'EVA-Matisse_Standard';
+ src: url('/EVA-Matisse_Standard.ttf') format('truetype');
 }
 
 /* Set the global font family */
 body {
-  background-color: #484242;
-  font-family: 'EVA-Matisse_Standard', sans-serif;
+ background-color: #484242;
+ font-family: 'EVA-Matisse_Standard', sans-serif;
 }
 
 /* Center the image on the left 2/5 of the screen and make it 1/10 of the screen size */
 .image-container {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  width: 10%;
-  height: 10%;
+ position: absolute;
+ top: 50%;
+ left: 20%;
+ transform: translate(-50%, -50%);
+ width: 10%;
+ height: 10%;
 }
 
 .image-container img {
-  width: 100%;
-  height: 100%;
+ width: 100%;
+ height: 100%;
+}
+
+/* Styles for the go-sohu class */
+.homepage {
+  width: 130px;
+  height: 38px;
+  background: #c9141d;
+  line-height: 38px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  border-radius: 2px;
 }
