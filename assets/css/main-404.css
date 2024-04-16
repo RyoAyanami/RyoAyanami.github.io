@@ -16,8 +16,8 @@ body {
  top: 50%;
  left: 20%;
  transform: translate(-50%, -50%);
- width: 10%;
- height: 10%;
+ width: 20%;
+ height: 20%;
 }
 
 .image-container img {
