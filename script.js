@@ -30,6 +30,12 @@ menuIcon.addEventListener('click', () => {
 
 btnPopup.onclick = () => {
     wrapper.classList.add('active-popup');
+    // 如果是在移动端，自动关闭 navbar
+    if (window.innerWidth <= 768) {
+        navbar.classList.remove('active');
+        navbg.classList.remove('active');
+        menuIcon.classList.remove('bx-x'); // 让菜单图标变回原样
+    }
 }
 
 iconClose.onclick = () => {
