@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入MAGI終端系統</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">MAGI</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin-popup">Login</button>
+            <button class="btnSignup-popup">Sign up</button>
+        </nav>
+    </header>
+
+    <section class="section"> // </section>
+    <div class="nav-bg"></div>
+
+    <!-- 登录和注册窗口 -->
+    <div class="wrapper">
+        <span class="icon-close"><i class='bx bx-x'></i></span>
+
+        <!-- 登录表单 -->
+        <div class="form-box" id="login-form">
+            <form action="">
+                <h1>MAGI 終端</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="編號" required>
+                    <i class='bx bx-user-circle'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="口令" required>
+                    <i class='bx bxs-user-badge'></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">記住我</label>
+                    <a onclick="forgot()">遺忘口令？</a>
+                </div>
+                <button type="submit" class="btn">登入</button>
+                <div class="register-link">
+                    <p>沒有身分？<a class="switch-to-signup">註冊一個</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- 注册表单 -->
+        <div class="form-box" id="signup-form">
+            <form action="">
+                <h1>MAGI 終端註冊</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="名稱" required>
+                    <i class='bx bx-universal-access'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="編號" required>
+                    <i class='bx bx-user-circle'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="口令" required>
+                    <i class='bx bxs-user-badge'></i>
+                </div>
+                <button type="submit" class="btn">註冊</button>
+                <div class="register-link">
+                    <p>已有身分？<a class="switch-to-login">點我登入</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 提示弹窗 -->
+    <div class="popup-container">
+        <div class="popup-box">
+            <h1>看來你遇到了困難</h1>
+            <p>請輸入有效的帳號或聯繫管理員</p>
+            <button class="close-btn">知道了</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

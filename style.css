@@ -21,7 +21,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: seagreen; */
     background: rgba(255, 255, 255, .3);
     display: flex;
     justify-content: center;
@@ -60,10 +59,9 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, .1);
     padding: 30px;
     position: absolute;
-    top: 20%;  /* 让弹窗出现在 wrapper 上方 */
+    top: 20%;
     transform: translateY(-50%);
 }
-/* 上部分用于调试 */
 
 .popup-box h1 {
     color: #333;
@@ -96,7 +94,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /*background: seagreen;*/
     background: url('img/Image_main.jpg') no-repeat;
     background-size: cover;
     background-position: center;
@@ -114,7 +111,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);    /* 控制毛玻璃效果 */
+    backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(255, 255, 255, .2);
     z-index: 100;
 }
@@ -130,7 +127,7 @@ body {
     transition: .5s;
 }
 
-.header:hover::before {     /* 动效 */
+.header:hover::before {
     left: 100%;
 }
 
@@ -152,7 +149,6 @@ body {
     color: #605555;
     font-size: 18px;
     text-decoration: none;
-    /* margin-left: 35px; */
     margin-right: 40px;
     transition: .3s;
 }
@@ -161,36 +157,29 @@ body {
     color: #000000;
 }
 
-.navbar .btnLogin-popup {
+.navbar button {
     background: none;
     border: none;
-    /* outline: none; */
     font-size: 18px;
     color: #605555;
     font-weight: 500;
     cursor: pointer;
     padding: 0;
-    transition: color .3s ease;  /* 添加平滑过渡 */
-    margin: 0;
+    transition: color .3s ease;
+    margin: 0 20px; /* 调整按钮的左右间距 */
     line-height: 1;
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
 }
 
-.navbar .btnLogin-popup:hover {
-    color: #000000;  /* 变为黑色，与导航链接一致 */
+/* 让 `Sign up` 按钮与 `Login` 按钮间距与 `a` 统一 */
+.navbar button:last-child {
+    margin-right: 0;
 }
 
-.navbar .btnLogin-popup::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 2px;
-    /* background: #fff; */
-    opacity: .85;
+.navbar button:hover {
+    color: #000000;
 }
 
 #menu-icon {
@@ -218,28 +207,26 @@ body {
         left: 0;
         width: 100%;
         padding: .5rem 4%;
-        /* background: rgba(255, 255, 255, .1);
-        border-bottom: 2px solid rgba(255, 255, 255, .2);
-        backdrop-filter: blur(10px); ->下移至nav-bg部分 */
         display: none;
+        flex-direction: column;
+        align-items: flex-start; /* 让所有导航项靠左对齐 */
+        padding-left: 20px; /* 增加左侧内边距，使其不紧贴屏幕边缘 */
     }
     .navbar.active {
         display: block;
     }
-    /* .navbar a,
-    .navbar .btnLogin-popup {
-        font-size: 20px;
-    } */
-    .navbar a {
-        display: block;
-        margin: 1.5rem 0;
+    .navbar a,
+    .navbar button {
+        display: block; /* 让按钮和链接单独占一行 */
+        width: 100%;
+        text-align: left; /* 文本左对齐 */
+        margin: 12px 0; /* 增加行间距，使导航更清晰 */
     }
     .nav-bg {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        /* height: 225px; */
         height: 100vh;
         background: rgba(255, 255, 255, .1);
         border-bottom: 2px solid rgba(255, 255, 255, .2);
@@ -255,25 +242,20 @@ body {
 /* navbar部分结束 */
 
 .wrapper {
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.2);
     transition: opacity 0.3s ease, transform 0.3s ease;
-
-
     width: 420px;
-    /* background: purple; ->调试 */
-    /* background: transparent; */
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(255, 255, 255, .2);
-    color: #605555; /* .wrapper容器下非指定文字颜色 */
+    color: #605555;
     border-radius: 10px;
     padding: 30px 40px;
-    opacity: 0;     /* 窗口控制显示 */
+    opacity: 0;
     pointer-events: none;
 }
 
@@ -284,6 +266,19 @@ body {
 .wrapper.active-popup {
     opacity: 1;
     pointer-events: auto;
+}
+
+/* 控制登录和注册窗口的显示 */
+#login-form, #signup-form {
+    display: none;
+}
+
+.wrapper.active-login #login-form {
+    display: block;
+}
+
+.wrapper.active-signup #signup-form {
+    display: block;
 }
 
 .icon-close {
@@ -315,7 +310,6 @@ body {
     position: relative;
     width: 100%;
     height: 50px;
-    /*background: salmon;*/
     margin: 30px 0;
 }
 
@@ -323,8 +317,6 @@ body {
     width: 100%;
     height: 100%;
     background: transparent;
-    border: none;
-    outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
@@ -370,9 +362,7 @@ body {
     height: 45px;
     background: #fff;
     border: none;
-    outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, .1);
     cursor: pointer;
     font-size: 16px;
     color: #333;
