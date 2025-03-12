@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGI 心理测试</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- 主屏幕 -->
+    <div id="main-screen">
+        <h1>MAGI 心理测试(DEMO版本)</h1>
+        <p>模仿EVA驾驶员选拔机制，参与者需在所提供的网页回答若干道心理测试题，答案对应不同角色。（此项会影响最后会拿到什么角色的谷子）</p>
+        <button id="start-button">开始测试</button>
+    </div>
+    
+    <!-- 测试界面 -->
+    <div id="quiz-container" class="hidden">
+        <div id="question-container" class="fade-in">
+            <img id="background" src="1.jpg" alt="背景图">
+            <h2 id="question"></h2>
+            <div id="options"></div>
+        </div>
+        <button id="back-button" class="hidden">返回</button>
+    </div>
+    
+    <!-- 结果界面 -->
+    <div id="result-container" class="hidden">
+        <h2 id="result-title"></h2>
+        <p id="result-text"></p>
+        <button id="restart-button">重新测试</button>
+    </div>
+
+    <!-- 调试计数器（默认隐藏） -->
+    <div id="debug-container">
+        <h3>调试计数器</h3>
+        <p>明日香: <span id="counter-asuka">0</span></p>
+        <p>绫波丽: <span id="counter-rei">0</span></p>
+        <p>碇真嗣: <span id="counter-shinji">0</span></p>
+        <p>渚薰: <span id="counter-kaworu">0</span></p>
+        <p>真希波: <span id="counter-mari">0</span></p>
+    </div>
+</body>
+</html>

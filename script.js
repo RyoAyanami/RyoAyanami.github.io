@@ -82,3 +82,9 @@ menuIcon.addEventListener('click', () => {
 // btnLogin-popup.onclick = () => {
 //     wrapper.classList.add('active-popup');
 // }
+
+
+function demo1() {
+    window.location.href = '/demo/index.html';
+    //List: 在此处添加跳转链接，如 window.location.href = 'url';
+}
