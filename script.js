@@ -85,6 +85,6 @@ menuIcon.addEventListener('click', () => {
 
 
 function demo1() {
-    window.location.href = '/demo/index.html';
+    window.location.href = 'demo/index.html';
     //List: 在此处添加跳转链接，如 window.location.href = 'url';
 }
